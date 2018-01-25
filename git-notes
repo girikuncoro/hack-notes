@@ -1,2 +1,5 @@
 # Add remote url
 git remote add origin https://github.com/user/repo.git
+
+# Reset pushed commit one level before
+git reset HEAD^
