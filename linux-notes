@@ -1,0 +1,9 @@
+# Change hostname
+sudo hostnamectl set-hostname nodea
+
+# Eliminate the need of sudo
+sudo usermod -aG docker user
+sudo usermod -aG <group> <username>
+
+# Kill multiple process with SIGINT
+sudo kill -SIGINT $(pidof kube-apiserver kubelet etcd)
