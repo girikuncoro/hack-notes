@@ -3,9 +3,10 @@
 # Hack for deploying bosh release changes faster to remote testbed
 VERSION=${1}
 FILE_PREFIX=${2}
+JUMPHOST_IP=${3}
 FILE_NAME=$FILE_PREFIX-$VERSION.tgz
 
-JUMPHOST=kubo@10.192.181.160
+JUMPHOST=kubo@$JUMPHOST_IP
 REMOTE_SERVER=ubuntu@30.0.0.5
 REMOTE_DESTINATION=/var/tempest/releases
 OWNER=tempest-web
