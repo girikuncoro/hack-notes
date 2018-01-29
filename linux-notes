@@ -7,3 +7,6 @@ sudo usermod -aG <group> <username>
 
 # Kill multiple process with SIGINT
 sudo kill -SIGINT $(pidof kube-apiserver kubelet etcd)
+
+# Check PID of multiple processes
+pidof kubelet etcd 
