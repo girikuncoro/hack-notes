@@ -17,8 +17,14 @@ sudo ip route add 172.18.0.0/16 via 192.168.225.194
 # Show IP table filters
 sudo iptables -L -vn -t filter
 
+# Show nat rules
+sudo iptables -L -nv -t nat
+
 # Forward incoming ens33 with destination 172.18.0.0/16
 sudo iptables -A FORWARD -i ens33 -d 172.18.0.0/16 -j ACCEPT
 
 # Curl using wget
 wget -qO - 172.18.0.2
+
+# List process with topology, only executable
+ps -aefo comm
