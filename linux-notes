@@ -26,5 +26,8 @@ sudo iptables -A FORWARD -i ens33 -d 172.18.0.0/16 -j ACCEPT
 # Curl using wget
 wget -qO - 172.18.0.2
 
+# Wget to get root route
+wget -S 10.0.70.246 -O /dev/null
+
 # List process with topology, only executable
 ps -aefo comm
