@@ -13,3 +13,10 @@ pidof kubelet etcd
 
 # Adding ip route
 sudo ip route add 172.18.0.0/16 via 192.168.225.194
+
+# Show IP table filters
+sudo iptables -L -vn -t filter
+
+# Forward incoming ens33 with destination 172.18.0.0/16
+sudo iptables -A FORWARD -i ens33 -d 172.18.0.0/16 -j ACCEPT
+
