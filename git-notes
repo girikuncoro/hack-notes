@@ -6,3 +6,6 @@ git reset HEAD^
 
 # Undo pushed merge commit
 git revert -m 1 <merge-commit>
+
+# Undo git add
+git reset filename.txt
