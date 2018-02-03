@@ -31,3 +31,6 @@ wget -S 10.0.70.246 -O /dev/null
 
 # List process with topology, only executable
 ps -aefo comm
+
+# How to get server SSL cert
+openssl s_client -showcerts -connect <server IP>:443
