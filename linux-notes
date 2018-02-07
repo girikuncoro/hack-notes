@@ -34,3 +34,6 @@ ps -aefo comm
 
 # How to get server SSL cert
 openssl s_client -showcerts -connect <server IP>:443
+
+# VNC Server
+exec vncserver -geometry 1280x768 -depth 24
