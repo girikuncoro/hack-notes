@@ -9,3 +9,6 @@ git revert -m 1 <merge-commit>
 
 # Undo git add
 git reset filename.txt
+
+# Stash specific file/folder
+git stash push -m <label> <file/folder>
