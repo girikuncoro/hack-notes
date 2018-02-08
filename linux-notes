@@ -41,3 +41,6 @@ exec vncserver -geometry 1280x768 -depth 24
 # Add alias on bashrc
 vi ~/.bashrc
 alias hack='cd /var/vcap/foo'
+
+# Get server public cert
+openssl s_client -showcerts -connect 192.168.111.23:443 </dev/null
