@@ -44,3 +44,6 @@ alias hack='cd /var/vcap/foo'
 
 # Get server public cert
 openssl s_client -showcerts -connect 192.168.111.23:443 </dev/null
+
+# SSH Tunnel
+ssh -D 8123 -fN kubo@<jumphost>
