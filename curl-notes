@@ -1,3 +1,5 @@
 # POST with Curl
 curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -X POST http://localhost:3000/data
 
+# Curl with CACERT
+curl --cacert <cert-file> https://<server-IP>
