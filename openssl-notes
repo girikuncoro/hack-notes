@@ -1,4 +1,4 @@
-# How to create certificate with SAN
+## How to create certificate with SAN
 1. Make config file
 ```
 $ cat san.cnf
@@ -22,4 +22,9 @@ DNS.1   = <todo>
 2. Create certificate with the config
 ```
 $ openssl req -out sslcert.csr -newkey rsa:2048 -nodes -keyout private.key -config ./san.cnf
+```
+
+## How to verify CSR for SAN
+```
+openssl req -noout -text -in sslcert.csr | grep DNS
 ```
