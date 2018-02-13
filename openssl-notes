@@ -1,0 +1,25 @@
+# How to create certificate with SAN
+1. Make config file
+```
+$ cat san.cnf
+[ req ]
+default_bits       = 2048
+distinguished_name = req_distinguished_name
+req_extensions     = req_ext
+prompt = no
+[ req_distinguished_name ]
+countryName                 = US
+stateOrProvinceName         = California
+localityName               = CA
+organizationName           = NSX
+commonName                 = <todo>
+[ req_ext ]
+subjectAltName = @alt_names
+[alt_names]
+DNS.1   = <todo> 
+```
+
+2. Create certificate with the config
+```
+$ openssl req -out sslcert.csr -newkey rsa:2048 -nodes -keyout private.key -config ./san.cnf
+```
