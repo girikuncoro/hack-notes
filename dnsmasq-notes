@@ -1,0 +1,11 @@
+# Install dnsmasq on ubuntu
+sudo apt-get install dnsmasq
+
+# Edit configuration, to be queried from external: put interface and listen address
+vim /etc/dnsmasq.conf
+
+# dnsmasq listens to /etc/hosts, dont forget to point to external DNS to resolve
+vim /etc/hosts
+
+# restart dnsmasq
+sudo /etc/init.d/dnsmasq restart
