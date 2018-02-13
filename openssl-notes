@@ -24,15 +24,19 @@ DNS.1   = <todo>
 $ openssl req -out sslcert.csr -newkey rsa:2048 -nodes -keyout private.key -config ./san.cnf
 ```
 
-## How to verify CSR for SAN
-```
-openssl req -noout -text -in sslcert.csr | grep DNS
-```
-
 ## Generate self-signed certificate from existing private key and CSR
 ```
 $ openssl x509 \
        -signkey domain.key \
        -in domain.csr \
        -req -days 365 -out domain.crt
+```
+
+## Extract info from SSL certificate
+```
+$ openssl x509 -in server.crt -text
+```
+who issue cert?
+```
+$ openssl x509 -in server.crt -noout -issuer
 ```
