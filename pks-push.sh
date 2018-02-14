@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Pre-requisite: SSH with public/private key
+# From jumphost: $ ssh-keygen -t rsa
+# From jumphost: $ cat ~/.ssh/id_rsa.pub | ssh kubo@<JUMPHOST-IP> 'cat >> .ssh/authorized_keys'
+
 # Hack for deploying bosh release changes faster to remote testbed
 VERSION=${1}
 FILE_PREFIX=${2}
