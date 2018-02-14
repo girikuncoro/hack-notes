@@ -1,5 +1,8 @@
 #!/bin/bash -ex
 
+# Example:
+# $ ./pks-push.sh 1.0.0-dev.22 1.0.0-dev.23 pks-nsx-t 10.160.140.232 30.0.0.5 c2aa0cae5a47.yml [apply]
+
 # Pre-requisite: SSH with public/private key
 #     ssh       ssh
 # A ------> B ------> C
@@ -8,7 +11,7 @@
 #  ssh key     ssh key
 #
 # where A: MacBook, B: Jumphost, C: Opsman VM
-# From Macbookt: 
+# From Macbook: 
 # $ ssh-keygen -t rsa
 # $ cat ~/.ssh/id_rsa.pub | ssh kubo@<JUMPHOST-IP> 'cat >> .ssh/authorized_keys'
 # $ scp ~/.ssh/id_rsa.pub kubo@<JUMPHOST-IP>:
