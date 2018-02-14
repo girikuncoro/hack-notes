@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ex
 
 # Pre-requisite: SSH with public/private key
 #     ssh       ssh
@@ -18,21 +18,28 @@
 # $ cat ./id_rsa.pub | ssh root@<REMOTE-SERVER> 'cat >> .ssh/authorized_keys'
 
 # Hack for deploying bosh release changes faster to remote testbed
-VERSION=${1}
-FILE_PREFIX=${2}
-JUMPHOST_IP=${3}
-FILE_NAME=$FILE_PREFIX-$VERSION.tgz
+OLD_VERSION=${1}
+NEW_VERSION=${2}
+OLD_PKG=pks-nsx-t-$OLD_VERSION.tgz
+NEW_PKG=pks-nsx-t-$NEW_VERSION.tgz
+FILE_PREFIX=${3}
+JUMPHOST_IP=${4}
+REMOTE_SERVER_IP=${5:-30.0.0.5}
+TILE_MANIFEST_FILE=${6}
+TILE_MANIFEST_PATH=/var/tempest/workspaces/default/metadata/$TILE_MANIFEST_FILE
+FILE_NAME=$FILE_PREFIX-$NEW_VERSION.tgz
 
 JUMPHOST=kubo@$JUMPHOST_IP
-REMOTE_SERVER=root@30.0.0.5
+REMOTE_SERVER=root@$REMOTE_SERVER_IP
 REMOTE_DESTINATION=/var/tempest/releases
 OWNER=tempest-web
 
-bosh create-release --force --version $VERSION --tarball $FILE_NAME
+bosh create-release --force --version $NEW_VERSION --tarball $FILE_NAME
 
 scp -oProxyJump=$JUMPHOST $FILE_NAME $REMOTE_SERVER:$REMOTE_DESTINATION
 
 FILE_PATH=$REMOTE_DESTINATION/$FILE_NAME
-ssh -t -oProxyJump=$JUMPHOST $REMOTE_SERVER "sudo chown $OWNER:$OWNER $FILE_PATH;"
+ssh -t -oProxyJump=$JUMPHOST $REMOTE_SERVER "sudo chown $OWNER:$OWNER $FILE_PATH; sed -i 's/'$OLD_VERSION'/'$NEW_VERSION'/g' $TILE_MANIFEST_PATH; sed -i 's/'$OLD_PKG'/'$NEW_PKG'/g' $TILE_MANIFEST_PATH; grep -A 2 $FILE_PREFIX $TILE_MANIFEST_PATH"
 
 echo "$FILE_NAME has been uploaded to remote server"
+rm -r $FILE_PREFIX-*.tgz
