@@ -47,3 +47,6 @@ openssl s_client -showcerts -connect 192.168.111.23:443 </dev/null
 
 # SSH Tunnel
 ssh -D 8123 -fN kubo@<jumphost>
+
+# Edit file in place
+sed -i 's/original/new/g' file.txt
