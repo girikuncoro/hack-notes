@@ -43,3 +43,8 @@ ssh -t -oProxyJump=$JUMPHOST $REMOTE_SERVER "sudo chown $OWNER:$OWNER $FILE_PATH
 
 echo "$FILE_NAME has been uploaded to remote server"
 rm -r $FILE_PREFIX-*.tgz
+
+if [ "$7" == "apply" ]; then
+	echo "Applying changes via opsman"
+	ssh $JUMPHOST "om -t $REMOTE_SERVER_IP -u admin -p 'Admin!23' --skip-ssl-validation apply-changes"
+fi
