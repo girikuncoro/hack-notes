@@ -4,6 +4,9 @@ git remote add origin https://github.com/user/repo.git
 # Reset pushed commit one level before
 git reset HEAD^
 
+# Undo git reset HEAD^
+git reset 'HEAD@{1}'
+
 # Undo pushed merge commit
 git revert -m 1 <merge-commit>
 
