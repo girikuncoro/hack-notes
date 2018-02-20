@@ -50,3 +50,6 @@ ssh -D 8123 -fN kubo@<jumphost>
 
 # Edit file in place
 sed -i 's/original/new/g' file.txt
+
+# Change password linux
+passwd
