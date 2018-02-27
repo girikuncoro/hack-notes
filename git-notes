@@ -21,3 +21,6 @@ git branch -d local-branch
 
 # Rename current branch
 git branch -m <newname>
+
+# Discard unstaged changes
+git checkout path/filename
