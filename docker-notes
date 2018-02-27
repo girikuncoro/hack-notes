@@ -1,0 +1,5 @@
+# One liner stop all docker containers
+docker stop $(docker ps -aq)
+
+# One liner remove all docker containers
+docker rm $(docker ps -aq)
