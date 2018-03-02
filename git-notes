@@ -24,3 +24,6 @@ git branch -m <newname>
 
 # Discard unstaged changes
 git checkout path/filename
+
+# Remove all untracked files
+git clean -df

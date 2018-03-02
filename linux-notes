@@ -53,3 +53,6 @@ sed -i 's/original/new/g' file.txt
 
 # Change password linux
 passwd
+
+# Compute sha1 of filename
+sha1sum filename
