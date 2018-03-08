@@ -27,3 +27,6 @@ git checkout path/filename
 
 # Remove all untracked files
 git clean -df
+
+# Rename local branch
+git branch -m oldname newname
