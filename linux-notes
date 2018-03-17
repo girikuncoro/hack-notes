@@ -56,3 +56,8 @@ passwd
 
 # Compute sha1 of filename
 sha1sum filename
+
+# Bind loopback address in MAC other than 127.0.0.1
+sudo ifconfig lo0 alias 127.0.0.* up
+sudo ifconfig lo0 alias 127.0.0.2 up
+sudo ifconfig lo0 alias 127.0.0.3 up
