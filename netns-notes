@@ -1,4 +1,6 @@
 What is /var/run used for?
 -> run time variable data, this directory contains system info data describing the system since it was booted. Files under this dir must be cleared at the beginning of boot process.
 
+What is ARP for?
+-> ARP (Address Resolution Protocol) is protocol to map IP and Mac address, physical machine address recognized in the local network. Addresses for attached devices are 48 bits long, but IP v4 is 32 bits.
 
