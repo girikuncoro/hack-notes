@@ -1,0 +1,4 @@
+What is /var/run used for?
+-> run time variable data, this directory contains system info data describing the system since it was booted. Files under this dir must be cleared at the beginning of boot process.
+
+
