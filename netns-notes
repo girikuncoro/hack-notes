@@ -6,3 +6,19 @@ What is ARP for?
 
 What is /proc for?
 -> /proc is a virtual filesystem, a process info pseudo-file system. It doesn't contain 'real' files but runtime system info (e.g. system memory, devices mounted, etc.). Control and info center for kernel.
+
+What is OVS?
+-> Open vSwitch, a multilayer virtual switch using virtual network bridges and flow rules to forward packets between hosts.
+
+What is veth?
+-> 
+
+How does bridge work?
+
+How does loopback work?
+
+How does vlan work?
+-> 
+
+What is tap interface?
+-> network terminal access point, a system that monitors events on local network, accessing data flowing across computer network.
