@@ -4,3 +4,5 @@ What is /var/run used for?
 What is ARP for?
 -> ARP (Address Resolution Protocol) is protocol to map IP and Mac address, physical machine address recognized in the local network. Addresses for attached devices are 48 bits long, but IP v4 is 32 bits.
 
+What is /proc for?
+-> /proc is a virtual filesystem, a process info pseudo-file system. It doesn't contain 'real' files but runtime system info (e.g. system memory, devices mounted, etc.). Control and info center for kernel.
