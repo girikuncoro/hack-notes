@@ -1,0 +1,8 @@
+# List current rules
+sudo iptables -L
+
+# List current rules in command format
+sudo iptables -S
+
+# Flush all iptables rules
+sudo iptables -F
