@@ -1,0 +1,6 @@
+# TCP dump on icmp packet
+sudo tcpdump -nni eth0 icmp
+
+# Check packet amount for iptables
+sudo iptables -L -v -n
+
