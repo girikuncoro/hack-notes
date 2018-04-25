@@ -4,3 +4,8 @@ sudo tcpdump -nni eth0 icmp
 # Check packet amount for iptables
 sudo iptables -L -v -n
 
+# Check route on MacBook
+netstat -nr
+
+# Add route on Macbook
+sudo route -n add <dest IP> <gateway IP>
