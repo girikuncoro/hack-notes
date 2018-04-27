@@ -1,0 +1,8 @@
+# To check kernel route status
+ip xfrm state
+
+# To check kernel routes
+ip xfrm policy
+
+# To check all route table including non default ones
+ip route show table all
