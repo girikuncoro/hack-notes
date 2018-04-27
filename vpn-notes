@@ -6,3 +6,6 @@ ip xfrm policy
 
 # To check all route table including non default ones
 ip route show table all
+
+# strongswan log
+sudo journalctl -u strongswan.service
